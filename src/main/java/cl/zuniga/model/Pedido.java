@@ -51,8 +51,9 @@ public class Pedido {
 	private BigDecimal valorPagado;
 	
 	@OneToMany(mappedBy = "pedido", cascade = {CascadeType.ALL },orphanRemoval = true)
-	private List<PedidoDetalle> pedidoDetalle;
-
+	private List<DetallePedido> detallePedido;
+	
+	
 	public Integer getIdPedido() {
 		return idPedido;
 	}
@@ -102,12 +103,14 @@ public class Pedido {
 		this.fechaEntrega = fechaEntrega;
 	}
 
-	public List<PedidoDetalle> getPedidoDetalle() {
-		return pedidoDetalle;
+
+
+	public List<DetallePedido> getDetallePedido() {
+		return detallePedido;
 	}
 
-	public void setPedidoDetalle(List<PedidoDetalle> pedidoDetalle) {
-		this.pedidoDetalle = pedidoDetalle;
+	public void setDetallePedido(List<DetallePedido> detallePedido) {
+		this.detallePedido = detallePedido;
 	}
 
 	public LocalDateTime getFechaPago() {
